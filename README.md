@@ -16,6 +16,8 @@ This is a notebook for leetcode learning. :smiley:
 | Problems | Summary | Times | Others |
 | ---| --- | --- | --- |
 |[27. Remove Element](https://leetcode.com/problems/remove-element/)| if(val!=nums[fastIndex]) nums[slowIndex++]=nums[fastIndex] |
+|[844. Backspace String Compare](https://leetcode.cn/problems/backspace-string-compare/) | | | ! |
+|[977. Squares of a Sorted Array](https://leetcode.cn/problems/squares-of-a-sorted-array/)|
 
 
 
