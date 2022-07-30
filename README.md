@@ -10,6 +10,14 @@ This is a notebook for leetcode learning. :smiley:
 | [35. Search Insert Position](https://leetcode.com/problems/search-insert-position/) | insert position(when left==right): left/right+1| 1 | |
 | [34. Find First and Last Position of Element in Sorted Array](https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/)| 
 
+- Remove Element
+双指针法（快慢指针法）
+
+| Problems | Summary | Times | Others |
+| ---| --- | --- | --- |
+|[27. Remove Element](https://leetcode.com/problems/remove-element/)| if(val!=nums[fastIndex]) nums[slowIndex++]=nums[fastIndex] |
+
+
 
 
 
