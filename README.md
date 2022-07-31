@@ -14,6 +14,7 @@ This is a notebook for leetcode learning. :smiley:
 
 - Remove Element
 双指针法（快慢指针法）
+时间复杂度O(n) 空间复杂度O(1)
 
 | Problems | Summary | Times | Others |
 | ---| --- | --- | --- |
@@ -22,6 +23,16 @@ This is a notebook for leetcode learning. :smiley:
 |[283. Move Zeroes](https://leetcode.cn/problems/move-zeroes/)|
 |[844. Backspace String Compare](https://leetcode.cn/problems/backspace-string-compare/) | | | ⭐ |
 |[977. Squares of a Sorted Array](https://leetcode.cn/problems/squares-of-a-sorted-array/)|
+
+- Silding Window 
+(two pointers)
+
+O(n) 
+
+
+| Problems | Summary | Times | Others |
+| ---| --- | --- | --- |
+|[209. Minimum Size Subarray Sum](https://leetcode.cn/problems/minimum-size-subarray-sum/)|一个for循环，窗口起始位置移动规则|| :star: |
 
 
 
