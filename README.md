@@ -33,6 +33,8 @@ O(n)
 | Problems | Summary | Times | Others |
 | ---| --- | --- | --- |
 |[209. Minimum Size Subarray Sum](https://leetcode.cn/problems/minimum-size-subarray-sum/)|一个for循环，窗口起始位置移动规则```while(sum>=target){sum-=nums[i++];}```|| :star: |
+|[904. Fruit Into Baskets](https://leetcode.cn/problems/fruit-into-baskets/)|求最大，移动条件：type>2（不满足条件的时候）|| ⭐|
+|[76. Minimum Window Substring](https://leetcode.cn/problems/minimum-window-substring/)|```for(const auto &p:mpt)``` 记录start|
 
 
 
