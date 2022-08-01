@@ -130,7 +130,6 @@ vector<vector<int>> levelOrderTraversal(TreeNode* root){
       return result;
 }
 //递归法（深度优先搜索）
-```
 void levelOrder(TreeNode* root,vector<vector<int>> &result, int depth){
       if(!root) return;
       if(result.size()==depth) result.push_back(vector<int>());
@@ -144,7 +143,6 @@ vector<vector<int>> levelOrderTraversal(TreeNode* root){
       levelOrder(root,result,depth);
       return result;
 }
-```
 ```
 - Create a Binary Tree
 ```
