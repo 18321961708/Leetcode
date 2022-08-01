@@ -36,6 +36,78 @@ O(n)
 |[904. Fruit Into Baskets](https://leetcode.cn/problems/fruit-into-baskets/)|求最大，移动条件：type>2（不满足条件的时候）|| ⭐|
 |[76. Minimum Window Substring](https://leetcode.cn/problems/minimum-window-substring/)|```for(const auto &p:mpt)``` 记录start|
 
+### Binary Tree
+- Definition:
+
+1. 满二叉树：如果一棵二叉树只有度为0的结点和度为2的结点，并且度为0的结点在同一层上，则这棵二叉树为满二叉树。深度为k，有2^k-1个节点。
+2. 在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~ 2^(h-1)  个节点。
+3. 优先级队列其实是一个堆，堆就是一棵完全二叉树
+4. 平衡二叉搜索树：又被称为AVL（Adelson-Velsky and Landis）树，且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。
+5. C++中map、set、multimap，multiset的底层实现都是平衡二叉搜索树，所以map、set的增删操作时间时间复杂度是logn;unordered_map底层实现是哈希表。
+- How to store a binary tree
+可以链式存储，也可以顺序存储
+- How to traverse a binary tree
+
+1. 深度优先遍历：前中后序  栈
+```
+//递归 前序
+void traversal(TreeNode* root,vector<int> &v){
+      if(root) return;
+      v.push_back(root->val);
+      traversal(root->left,v);
+      traversal(root->right,v);
+}
+//非递归
+//前序:第一次遍历到节点就处理
+vector<int> preorderTraversal(TreeNode* root){
+       stack<TreeNode*> st;
+       if(root) st.push(root);
+       vector<int> ans;
+       while(!st.empty()){
+            TreeNode* node=st.top();
+            ans.push_back(node->val);
+            st.pop();
+            if(node->right) st.push(node->right);
+            if(node->left) st.push(node->left);
+       }
+       return ans;
+}
+//中序:第二次遍历到(回溯)的时候处理
+void inorderTraversal(TreeNode* root){
+        stack<TreeNode*> st;
+        TreeNode* cur=root;
+        vector<int> ans;
+        while(cur||!st.empty()){
+             //一直向左遍历
+             if(cur){
+                st.push(cur);
+                cur=cur->left;
+             }
+             //回溯
+             else{
+                cur=st.top();
+                st.pop();
+                ans.push_back(cur->val);
+                cur=cur->right;
+             }
+        }
+        return ans;
+}
+```
+2. 广度优先遍历：层序   队列
+
+- Create a Binary Tree
+```
+struct TreeNode{
+    int val;
+    TreeNode* Left;
+    TreeNode* Right;
+    TreeNode(int x): val(x), Left(NULL), Right(NULL) {}
+    };
+```
+- 
+
+
 
 
 
