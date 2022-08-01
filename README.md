@@ -73,7 +73,7 @@ vector<int> preorderTraversal(TreeNode* root){
        return ans;
 }
 //中序:第二次遍历到(回溯)的时候处理
-void inorderTraversal(TreeNode* root){
+vector<int> inorderTraversal(TreeNode* root){
         stack<TreeNode*> st;
         TreeNode* cur=root;
         vector<int> ans;
@@ -93,9 +93,59 @@ void inorderTraversal(TreeNode* root){
         }
         return ans;
 }
+//后序：调整先序左右顺序，逆向输出
+vector<int> postorderTraversal(TreeNode* root){
+      stack<TreeNode*> st;
+      vector<int> ans;
+      if(root) st.push(root);
+      while(!st.empty()){
+            TreeNode* node=st.top();
+            st.pop();
+            ans.push_back(node->val);
+            if(node->left) st.push(node->left);
+            if(node->right) st.push(node->right);
+      }
+      reverse(ans.begin(),ans.end());
+      return ans;
+}
 ```
 2. 广度优先遍历：层序   队列
-
+```
+vector<vector<int>> levelOrderTraversal(TreeNode* root){
+      vector<vector<int>> result;
+      queue<TreeNode*> que;
+      if(root) que.push(root);
+      while(!que.empty()){
+            vector<int> v;
+            int size=que.size();
+            for(int i=0;i<size;i++){
+                  TreeNode* node=que.front();
+                  que.pop();
+                  v.push_back(node->val);
+                  if(node->left) que.push(node->left);
+                  if(node->right) que.push(node->right);
+            }
+            result.push_back(v);
+      }
+      return result;
+}
+//递归法（深度优先搜索）
+```
+void levelOrder(TreeNode* root,vector<vector<int>> &result, int depth){
+      if(!root) return;
+      if(result.size()==depth) result.push_back(vector<int>());
+      result[depth].push_back(root->val);
+      levelOrder(root->left,result,depth+1);
+      levelOrder(root->right,result,depth+1);
+ }
+vector<vector<int>> levelOrderTraversal(TreeNode* root){
+      vector<vector<int>> result;
+      int depth=0;
+      levelOrder(root,result,depth);
+      return result;
+}
+```
+```
 - Create a Binary Tree
 ```
 struct TreeNode{
