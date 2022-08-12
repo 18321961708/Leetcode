@@ -117,7 +117,7 @@ vector<vector<int>> levelOrderTraversal(TreeNode* root){
       if(root) que.push(root);
       while(!que.empty()){
             vector<int> v;
-            int size=que.size();
+            int size=que.size();//注意要记录size，因为que.size()在下面for循环过程中可变
             for(int i=0;i<size;i++){
                   TreeNode* node=que.front();
                   que.pop();
@@ -152,9 +152,64 @@ struct TreeNode{
     TreeNode* Right;
     TreeNode(int x): val(x), Left(NULL), Right(NULL) {}
     };
-```
-- 
+//类    
+class Node {
+public:
+    int val;
+    Node* left;
+    Node* right;
+    Node* next;
 
+    Node() : val(0), left(NULL), right(NULL), next(NULL) {}
+
+    Node(int _val) : val(_val), left(NULL), right(NULL), next(NULL) {}
+
+    Node(int _val, Node* _left, Node* _right, Node* _next)
+        : val(_val), left(_left), right(_right), next(_next) {}
+};    
+    
+
+```
+| Problems | Summary | Times | Others |
+| ---| --- | --- | --- |
+|[515. Find Largest Value in Each Tree Row](https://leetcode.cn/problems/find-largest-value-in-each-tree-row/)|
+|[116. Populating Next Right Pointers in Each Node](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)|
+|[111. Minimum Depth of Binary Tree](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)|dfs/bfs,典型递归||⭐|
+
+```
+//111. Minimum Depth of Binary Tree题解和总结
+//1、最大值宏定义
+#include <climits>
+int max=INT_MAX;//Maximum value for an object of type int  32767 (2^15-1) or greater
+//2、递归
+int minDepth(TreeNode* root) {
+        if(root==NULL) return 0;
+        else if(root->right==NULL) return minDepth(root->left)+1;
+        else if(root->left==NULL) return minDepth(root->right)+1;
+        else return min(minDepth(root->left),minDepth(root->right))+1;
+|
+//另一解法
+    int minDepth(TreeNode *root) {
+        if (root == nullptr) {
+            return 0;
+        }
+
+        if (root->left == nullptr && root->right == nullptr) {
+            return 1;
+        }
+//如果非空且非叶节点，递归求子节点最小高度，然后加
+        int min_depth = INT_MAX;
+        if (root->left != nullptr) {
+            min_depth = min(minDepth(root->left), min_depth);
+        }
+        if (root->right != nullptr) {
+            min_depth = min(minDepth(root->right), min_depth);
+        }
+//该结点和节点子节点高度和
+        return min_depth + 1;
+}
+
+```
 
 
 
