@@ -44,10 +44,19 @@ O(n)
 3. 优先级队列其实是一个堆，堆就是一棵完全二叉树
 4. 平衡二叉搜索树：又被称为AVL（Adelson-Velsky and Landis）树，且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。
 5. C++中map、set、multimap，multiset的底层实现都是平衡二叉搜索树，所以map、set的增删操作时间时间复杂度是logn;unordered_map底层实现是哈希表。
+
 - How to store a binary tree
 可以链式存储，也可以顺序存储
 - How to traverse a binary tree
 
+- 遍历
+
+| Problems | Summary | Times | Others |
+| ---| --- | --- | --- |
+|[515. Find Largest Value in Each Tree Row](https://leetcode.cn/problems/find-largest-value-in-each-tree-row/)|
+|[116. Populating Next Right Pointers in Each Node](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)|
+|[111. Minimum Depth of Binary Tree](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)|dfs/bfs,典型递归||⭐|
+|[226. Invert Binary Tree](https://leetcode.cn/problems/invert-binary-tree/)|递归、迭代、广度优先，本质考察树的遍历||⭐|
 1. 深度优先遍历：前中后序  栈
 ```
 //递归 前序
@@ -170,11 +179,7 @@ public:
     
 
 ```
-| Problems | Summary | Times | Others |
-| ---| --- | --- | --- |
-|[515. Find Largest Value in Each Tree Row](https://leetcode.cn/problems/find-largest-value-in-each-tree-row/)|
-|[116. Populating Next Right Pointers in Each Node](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)|
-|[111. Minimum Depth of Binary Tree](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)|dfs/bfs,典型递归||⭐|
+
 
 ```
 //111. Minimum Depth of Binary Tree题解和总结
@@ -210,6 +215,9 @@ int minDepth(TreeNode* root) {
 }
 
 ```
+
+| Problems | Summary | Times | Others |
+| ---| --- | --- | --- |
 
 
 
