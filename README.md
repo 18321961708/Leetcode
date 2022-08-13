@@ -57,6 +57,7 @@ O(n)
 |[116. Populating Next Right Pointers in Each Node](https://leetcode.cn/problems/populating-next-right-pointers-in-each-node/)|
 |[111. Minimum Depth of Binary Tree](https://leetcode.cn/problems/minimum-depth-of-binary-tree/)|dfs/bfs,典型递归||⭐|
 |[226. Invert Binary Tree](https://leetcode.cn/problems/invert-binary-tree/)|递归、迭代、广度优先，本质考察树的遍历||⭐|
+|[101. Symmetric Tree](https://leetcode.cn/problems/symmetric-tree/)| 递归（两个子树同时类后序）、迭代||⭐|
 1. 深度优先遍历：前中后序  栈
 ```
 //递归 前序
